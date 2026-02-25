@@ -1,4 +1,7 @@
 {
-  "buildCommand": "",
-  "outputDirectory": "public"
+  "functions": {
+    "api/polish.js": {
+      "runtime": "nodejs22.x"
+    }
+  }
 }
