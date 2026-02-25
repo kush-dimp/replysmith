@@ -1251,13 +1251,19 @@ Do not include any other text, preambles, explanations, or comments about the or
                 trigger.addEventListener('click', e => {
                     e.stopPropagation();
                     const isOpening = !dropdown.classList.contains('open');
+                    // Close all others and reset their panel z-index
                     document.querySelectorAll('.custom-select-dropdown.open').forEach(d => {
                         d.classList.remove('open');
                         d.previousElementSibling.classList.remove('open');
+                        const p = d.closest('.panel');
+                        if (p) p.style.zIndex = '';
                     });
                     if (isOpening) {
                         dropdown.classList.add('open');
                         trigger.classList.add('open');
+                        // Elevate this panel above siblings so dropdown isn't hidden behind them
+                        const panel = wrapper.closest('.panel');
+                        if (panel) panel.style.zIndex = '10';
                     }
                 });
             });
@@ -1266,6 +1272,8 @@ Do not include any other text, preambles, explanations, or comments about the or
                 document.querySelectorAll('.custom-select-dropdown.open').forEach(d => {
                     d.classList.remove('open');
                     d.previousElementSibling.classList.remove('open');
+                    const p = d.closest('.panel');
+                    if (p) p.style.zIndex = '';
                 });
             });
         }
