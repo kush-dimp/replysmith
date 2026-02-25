@@ -137,7 +137,6 @@
             background-clip: text;
             letter-spacing: -0.03em;
             line-height: 1;
-            display: inline;
         }
 
         .beta-badge {
@@ -150,10 +149,6 @@
             font-weight: 700;
             color: #a5b4fc;
             letter-spacing: 0.1em;
-            vertical-align: middle;
-            margin-left: 10px;
-            position: relative;
-            top: -4px;
             -webkit-text-fill-color: #a5b4fc;
         }
 
@@ -688,8 +683,9 @@
         <header>
             <div class="brand-area">
                 <div class="brand-icon">⚡</div>
-                <div style="text-align: left;">
-                    <h1>ReplySmith</h1><span class="beta-badge">BETA</span>
+                <div style="display:flex; align-items:center; gap:10px;">
+                    <h1>ReplySmith</h1>
+                    <span class="beta-badge">BETA</span>
                 </div>
             </div>
             <p class="subtitle">Paste what you really want to say. Get back what you should actually send.</p>
